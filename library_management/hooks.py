@@ -11,6 +11,11 @@ app_color = "#589494"
 app_email = "info@frappe.io"
 app_license = "GNU General Public License"
 
+role_home_page = {
+    "Library Member": "article"
+}
+
+
 # Includes in <head>
 # ------------------
 

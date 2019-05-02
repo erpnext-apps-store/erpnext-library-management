@@ -7,6 +7,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
+
 class LibraryTransaction(Document):
 	def validate(self):
 		last_transaction = frappe.get_list("Library Transaction", 
@@ -15,7 +16,9 @@ class LibraryTransaction(Document):
 				"article": self.article,
 				"transaction_date": ("<=", self.transaction_date),
 				"name": ("!=", self.name)
-			})
+			},
+			order_by="transaction_date desc")
+		import pdb; pdb.set_trace()
 		if self.transaction_type == "Issue":
 			msg = _("Article {0} {1} has not been recorded as returned since {2}")
 			if last_transaction and last_transaction[0].transaction_type == "Issue":
