@@ -15,6 +15,7 @@ role_home_page = {
     "Library Member": "article"
 }
 
+fixtures = ["Custom Field"]
 
 # Includes in <head>
 # ------------------
